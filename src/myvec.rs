@@ -36,3 +36,9 @@ pub fn test_vec_string(){
 
     println!("After slice {:?}", siblings);
 }
+
+// I want to initialize my vec to contain the same values of elements
+pub fn manufacture_cars(){
+    let porsche_cc = vec![3996; 10];
+    println!("First line of porsche engine assign {:?}cc", porsche_cc)
+}
