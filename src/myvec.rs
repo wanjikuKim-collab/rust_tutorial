@@ -13,6 +13,7 @@ pub fn test_vec_int(){
     let v = vec![10,20,30,40,50,60,70,80,90];
     println!("{:?}When rounded of to the nearest hundreds they become 100", &v.as_slice()[4..]);
     println!("Testing the get method of referencing a value {:?}", v.get(10));
+    println!("Referencing some value using the get enum: {:?}", v[v.len()-1])
 
     
 }
