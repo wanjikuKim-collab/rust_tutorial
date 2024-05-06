@@ -29,8 +29,8 @@ pub fn test_vec_string(){
 
     //solution to the borrow error
 
-    // slice
-    for i in siblings.as_slice(){
+    // slice or clone
+    for i in siblings.clone(){
         println!("Sibling name: {}", i);
     }
 
