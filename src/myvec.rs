@@ -17,3 +17,13 @@ pub fn test_vec_int(){
 
     
 }
+
+pub fn test_vec_string(){
+    let siblings = vec!["Samuel", "David", "Emmy"];
+
+    for i in siblings{
+        println!("Sibling name: {}", i);
+    }
+
+    println!("Siblings: {:?}", siblings);
+}
