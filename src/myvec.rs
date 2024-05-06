@@ -10,8 +10,8 @@ pub fn test_vec_int(){
     println!("The capacity of Vec: {:?}", my_ints.capacity());
     println!("My first born brother is {:?} years old", my_ints[2]);
 
-    let v = vec![10,20,30,40,50,60];
-    
+    let v = vec![10,20,30,40,50,60,70,80,90];
+    println!("{:?}When rounded of to the nearest hundreds they become 100", &v.as_slice()[4..])
 
     
 }
