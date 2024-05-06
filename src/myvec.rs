@@ -55,4 +55,6 @@ pub fn manufacture_cars(){
     }
 
     println!("The manufactured porsche list is: {:#?}", car_list);
+    println!("The manufactured porsche vector LENGTH is: {:#?}", car_list.len());
+    println!("The manufactured porsche vector CAPACITY is: {:#?}", car_list.capacity());
 }
