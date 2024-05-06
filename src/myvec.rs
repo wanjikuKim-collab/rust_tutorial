@@ -37,8 +37,22 @@ pub fn test_vec_string(){
     println!("After slice {:?}", siblings);
 }
 
+#[derive(Debug)]
+struct Car{
+    manufacturer: String,
+    model: String,
+    cc: u16,
+}
+
 // I want to initialize my vec to contain the same values of elements
 pub fn manufacture_cars(){
     let porsche_cc = vec![3996; 10];
-    println!("First line of porsche engine assign {:?}cc", porsche_cc)
+    println!("First line of porsche engine assign {:?}cc", porsche_cc);
+
+    let mut car_list = Vec::new();
+    for i in porsche_cc.as_slice(){
+        car_list.push(Car{manufacturer: "Porsche". to_string(),model: "Porsche 911".to_string(), cc: {*i}})
+    }
+
+    println!("The manufactured porsche list is: {:#?}", car_list);
 }
