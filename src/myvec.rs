@@ -68,4 +68,8 @@ pub fn merge_company(){
     println!("dt_dobie:{:?}", dt_dobie);
     println!("cfao: {:?}", cfao);
 
+    cfao.insert(2, "Cheverolet");
+    println!("cfao: {:?}", cfao);
+
+
 }
