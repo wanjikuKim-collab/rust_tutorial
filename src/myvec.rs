@@ -58,3 +58,14 @@ pub fn manufacture_cars(){
     println!("The manufactured porsche vector LENGTH is: {:#?}", car_list.len());
     println!("The manufactured porsche vector CAPACITY is: {:#?}", car_list.capacity());
 }
+
+
+pub fn merge_company(){
+    let mut dt_dobie = vec!["VW", "Mercedes", "Hyundai", "Sino Trucks"];
+    let mut cfao = vec!["Toyota", "Yamaha", "Prado" ];
+
+    cfao.append(&mut dt_dobie);
+    println!("dt_dobie:{:?}", dt_dobie);
+    println!("cfao: {:?}", cfao);
+
+}
