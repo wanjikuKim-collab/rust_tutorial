@@ -1,3 +1,10 @@
+
+use ring::aead::{Aad, BoundKey, Nonce, SealingKey, UnboundKey, AES_256_GCM, NONCE_LEN};
+use ring::error::Unspecified;
+use ring::rand::{SecureRandom, SystemRandom};
+use hex;
+
+
 pub fn test_vec_int(){
     let mut my_ints: Vec<i32> = Vec::new();
 
@@ -71,5 +78,37 @@ pub fn merge_company(){
     cfao.insert(2, "Cheverolet");
     println!("cfao: {:?}", cfao);
 
+    let vec1 = vec![10,20,30,40];
+    let vec2 = vec![vec1];
 
+    println!("This is vec2 {:?}", vec2);
+    println!("Goodbye Kimmy");
+
+
+}
+//Create unit struct for the counter nonce sequence
+pub struct CounterNonceSequence(u32);
+
+// impl NonceSequence for CounterNonceSequence{
+//   // called once for each seal operation
+//   fn advance(&mut self)-> Result<Nonce, Unspecified>{
+//     let mut nonce_bytes = vec![0; NONCE_LEN];
+
+//     let bytes = self.0.to_be_bytes();
+//     nonce_bytes[8..].copy_from_slice(&bytes);
+//     println!("nonce_bytes = {}", hex::encode(&nonce_bytes));
+
+//     self.0 += 1; //advance the counter
+//     Nonce::try_assume_unique_for_key(&nonce_bytes)
+//   }
+// }
+
+pub fn encrypt(){
+    let rand = SystemRandom::new();
+
+    let mut key_bytes = vec![0;AES_256_GCM.key_len()];
+    println!("key_bytes: {:?}", key_bytes);
+
+    rand.fill(&mut key_bytes);
+    println!("key_bytes ={}", hex::encode(&key_bytes));// encodes data into hexadecimal representation
 }
